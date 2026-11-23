@@ -1,0 +1,21 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+  errors:
+    # Flutter 3.47+ moved Material to package:material_ui, but GetX 4.7.x still
+    # builds on package:flutter/material.dart. Using the same import keeps the
+    # widget types identical; migrate both together when GetX supports it.
+    deprecated_member_use: ignore
+    deprecated_member_use_from_same_package: ignore
+
+linter:
+  rules:
+    prefer_single_quotes: true
+    prefer_const_constructors: true
+    avoid_print: true
+    # Controllers take public named dependencies and keep private fields.
+    prefer_initializing_formals: false
